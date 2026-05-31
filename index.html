@@ -78,6 +78,9 @@
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a { color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s; }
     .nav-links a:hover { color: var(--text); }
+    /* Button links inside the nav keep their own text color (override the muted link color) */
+    .nav-links a.btn-primary { color: #06122a; }
+    .nav-links a.btn-primary:hover { color: #06122a; }
 
     .btn {
       display: inline-block;
