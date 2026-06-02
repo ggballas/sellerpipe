@@ -7,6 +7,11 @@
   <meta name="description" content="SellerPipe is a managed ETL pipeline that pulls your Amazon SP-API reports into BigQuery automatically. Scheduled data syncs, API access, $20 per seller account per month." />
   <meta name="theme-color" content="#0b1220" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="220x220" href="assets/logo-220.png" />
+  <link rel="apple-touch-icon" href="assets/logo-220.png" />
+
   <!-- Open Graph -->
   <meta property="og:title" content="SellerPipe — Amazon SP-API to BigQuery" />
   <meta property="og:description" content="Managed ETL that pipes your Amazon seller data into BigQuery on a schedule. $20 per seller account / month." />
@@ -64,7 +69,9 @@
       justify-content: space-between;
       height: 72px;
     }
-    .brand { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand { display: flex; flex-direction: row; align-items: center; gap: 12px; line-height: 1.05; }
+    .brand-mark { display: block; border-radius: 10px; flex: 0 0 auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
     .brand .name {
       font-size: 22px;
       font-weight: 800;
@@ -236,8 +243,11 @@
   <header>
     <div class="wrap nav">
       <a href="#top" class="brand" aria-label="SellerPipe by Wyrmspire">
-        <span class="name">SellerPipe</span>
-        <span class="by">By Wyrmspire</span>
+        <img class="brand-mark" src="assets/logo.svg" alt="SellerPipe logo" width="44" height="44" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
       </a>
       <nav class="nav-links">
         <a href="#how">How it works</a>
@@ -423,8 +433,11 @@
   <footer>
     <div class="wrap foot">
       <div class="brand">
-        <span class="name">SellerPipe</span>
-        <span class="by">By Wyrmspire</span>
+        <img class="brand-mark" src="assets/logo.svg" alt="SellerPipe logo" width="38" height="38" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
       </div>
       <div class="foot-links">
         <a href="#how">How it works</a>
