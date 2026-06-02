@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SellerPipe</title>
+  <meta name="description" content="How SellerPipe collects, uses, stores, and protects your information — including Amazon seller data accessed via the Selling Partner API and Amazon Advertising APIs." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="220x220" href="../assets/logo-220.png" />
+  <link rel="apple-touch-icon" href="../assets/logo-220.png" />
+
+  <meta property="og:title" content="Privacy Policy — SellerPipe" />
+  <meta property="og:description" content="How SellerPipe collects, uses, stores, and protects your information." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sellerpipe.xyz/privacy/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b1220; --bg-soft: #111a2e; --panel: #131d33; --border: #243049;
+      --text: #e8edf7; --muted: #9aa7c2; --brand: #5b8cff; --brand-2: #43d9b8;
+      --radius: 16px; --maxw: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2647 0%, transparent 60%), var(--bg);
+      color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 18, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; flex-direction: row; align-items: center; gap: 12px; line-height: 1.05; }
+    .brand-mark { display: block; border-radius: 10px; flex: 0 0 auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand .name {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand .by { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s; text-decoration: none; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.btn-primary { color: #06122a; }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      border: 1px solid transparent; text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #06122a; box-shadow: 0 8px 24px rgba(91, 140, 255, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35); text-decoration: none; }
+
+    /* Hero */
+    .page-hero { padding: 64px 0 24px; }
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 56px); line-height: 1.05; letter-spacing: -0.03em;
+      margin: 0 0 16px; font-weight: 800;
+    }
+    .page-hero h1 .grad {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .page-hero .meta {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--muted); background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 999px;
+    }
+
+    /* Long-form article */
+    article.prose { max-width: 760px; margin: 0 auto; padding: 24px 0 80px; font-size: 16px; line-height: 1.75; color: var(--text); }
+    article.prose .intro { color: var(--muted); font-size: 17px; margin: 0 0 36px; }
+    article.prose h2 {
+      font-size: 24px; letter-spacing: -0.01em; margin: 48px 0 12px;
+      padding-top: 24px; border-top: 1px solid var(--border);
+    }
+    article.prose h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    article.prose h3 { font-size: 18px; margin: 28px 0 8px; color: var(--text); }
+    article.prose p { color: var(--muted); margin: 0 0 14px; }
+    article.prose ul, article.prose ol { color: var(--muted); padding-left: 22px; margin: 0 0 14px; }
+    article.prose li { margin-bottom: 8px; }
+    article.prose strong { color: var(--text); font-weight: 600; }
+    article.prose a { color: var(--brand-2); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 48px 0; margin-top: 40px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot .brand .name { font-size: 18px; }
+    .foot .legal { color: var(--muted); font-size: 14px; }
+    .foot .foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .foot .foot-links a { color: var(--muted); font-size: 14px; text-decoration: none; }
+    .foot .foot-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="SellerPipe by Wyrmspire">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="44" height="44" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+        <a href="/#contact" class="btn btn-primary">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <h1><span class="grad">Privacy Policy</span></h1>
+        <span class="meta">Last updated: June 2, 2026</span>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <article class="prose">
+        <p class="intro">
+          This Privacy Policy explains how Wyrmspire LLC ("<strong>Wyrmspire</strong>," "<strong>we</strong>," "<strong>us</strong>") collects, uses, stores, shares, and protects information when you use SellerPipe (the "<strong>Service</strong>"), available at sellerpipe.xyz. SellerPipe is an ETL service that connects to your Amazon Seller Central account via the Selling Partner API ("<strong>SP-API</strong>") and Amazon Advertising APIs and loads the resulting data into a destination warehouse — typically your own Google BigQuery project.
+        </p>
+
+        <h2>1. Information we collect</h2>
+
+        <h3>1.1 Account information</h3>
+        <p>When you create a SellerPipe account or contact us, we collect your name, email address, company name, and (where applicable) billing information.</p>
+
+        <h3>1.2 Amazon Information</h3>
+        <p>When you authorize SellerPipe through Seller Central or Amazon Advertising, we receive and store:</p>
+        <ul>
+          <li>An OAuth refresh token that lets SellerPipe call the SP-API or Ads API on your behalf</li>
+          <li>Your Amazon seller identifier (merchant token), marketplace identifiers, and brand metadata</li>
+          <li>Operational data returned by the APIs you have authorized — for example: orders, sales, FBA inventory, settlements, financial events, listings, fulfillment events, returns, and (for Brand-Registry-enrolled sellers) Brand Analytics; for Advertising: campaign, ad group, keyword, and report data</li>
+        </ul>
+        <p>We refer to the data covered in this section collectively as "<strong>Amazon Information</strong>." Amazon Information is handled in accordance with the Amazon Acceptable Use Policy and the Amazon Data Protection Policy. See Section 4 for specifics.</p>
+
+        <h3>1.3 Destination warehouse</h3>
+        <p>SellerPipe loads synced data into a destination you control — typically a Google BigQuery dataset in your own GCP project. We collect the dataset identifier and the service-account credentials you provide for SellerPipe to write to that destination. We do not retain a separate long-term copy of synced rows on our infrastructure beyond what is required for in-flight sync, retry, and short-window debugging (typically 7 days).</p>
+
+        <h3>1.4 Usage and security data</h3>
+        <p>We collect logs of API calls SellerPipe makes on your behalf, sync run history, error traces, and audit records of which authorized apps accessed which data. We collect IP addresses and user-agent strings for authentication and abuse-prevention purposes.</p>
+
+        <h3>1.5 Cookies and analytics</h3>
+        <p>The sellerpipe.xyz website does not set tracking or advertising cookies. The static landing page is served by GitHub Pages, which may set basic technical cookies as part of its CDN operation. When you sign in to the SellerPipe application (where available), we set a session cookie strictly necessary for authentication.</p>
+
+        <h2>2. How we use information</h2>
+        <p>We use the information described above to:</p>
+        <ul>
+          <li>Provide and operate the Service, including running scheduled syncs and writing results to your destination warehouse</li>
+          <li>Send transactional notifications about sync status, failures, and account events</li>
+          <li>Provide customer support (including via <a href="mailto:support@sellerpipe.xyz">support@sellerpipe.xyz</a>)</li>
+          <li>Bill you for the Service, including processing payments through a third-party payment processor where applicable</li>
+          <li>Detect, investigate, and prevent fraud, abuse, and security incidents</li>
+          <li>Comply with legal obligations and respond to lawful requests</li>
+        </ul>
+        <p>We do not use Amazon Information to train machine-learning models, to benchmark you against other sellers without your explicit consent, or for any purpose unrelated to providing the Service to you.</p>
+
+        <h2>3. How we share information</h2>
+        <p>We do not sell, rent, or trade your information. We share information only as described below:</p>
+        <ul>
+          <li><strong>Apps you authorize.</strong> If you grant another application access to your SellerPipe data via the app-delegation feature, that application receives scoped, revocable access to the categories of data you specify. You can revoke access at any time from the SellerPipe dashboard.</li>
+          <li><strong>Sub-processors.</strong> We use the following sub-processors to operate the Service: Amazon Web Services (compute, storage, KMS, Secrets Manager); Google Cloud (the destination BigQuery project you control, and SellerPipe's own operational metadata storage); GitHub Pages (static website hosting); and email infrastructure providers for transactional and support email delivery. Each sub-processor is bound by confidentiality and security obligations.</li>
+          <li><strong>Legal compliance.</strong> We may disclose information when required by law, subpoena, or other valid legal process, or to protect the rights, property, or safety of Wyrmspire, our customers, or the public. Where legally permitted, we will notify you before complying with a request that targets your data.</li>
+          <li><strong>Business transfers.</strong> If Wyrmspire is involved in a merger, acquisition, or asset sale, your information may transfer as part of that transaction. We will notify you and provide reasonable choices before any transfer.</li>
+        </ul>
+
+        <h2>4. Amazon Information: specific handling</h2>
+        <p>Because SellerPipe is an Amazon SP-API and Ads API consumer, the following commitments apply specifically to Amazon Information:</p>
+        <ul>
+          <li><strong>Encryption in transit.</strong> All Amazon Information transmitted between SellerPipe and Amazon, between SellerPipe and your destination warehouse, and between SellerPipe and you is encrypted using TLS 1.2 or higher.</li>
+          <li><strong>Encryption at rest.</strong> Refresh tokens and any cached Amazon Information are encrypted at rest using AES-256 with keys managed in AWS Key Management Service (KMS).</li>
+          <li><strong>Access controls.</strong> Access to Amazon Information by Wyrmspire personnel is restricted to a small number of authorized engineers on a least-privilege basis, requires multi-factor authentication, and is fully audit-logged.</li>
+          <li><strong>Per-tenant isolation.</strong> Each customer's Amazon Information is stored in a logically isolated dataset. No customer can read another customer's data.</li>
+          <li><strong>Retention.</strong> Refresh tokens and operational state are retained for as long as your SellerPipe account is active. Following account termination or token revocation, we delete refresh tokens within 30 days and any cached Amazon Information within 90 days, unless we are required by law to retain it longer.</li>
+          <li><strong>No aggregation across sellers.</strong> We do not combine Amazon Information across sellers, do not produce cross-seller benchmarks without your explicit consent, and do not use Amazon Information to make decisions that affect other sellers.</li>
+          <li><strong>No resale or unauthorized sharing.</strong> We do not sell Amazon Information and we do not share it with any party other than (a) sub-processors necessary to operate the Service, (b) apps you have explicitly authorized through the app-delegation feature, and (c) as required by law.</li>
+          <li><strong>Amazon's audit rights.</strong> We agree to provide records and reasonable cooperation to Amazon as required by the SP-API Developer Agreement and Data Protection Policy.</li>
+        </ul>
+
+        <h2>5. Data retention and deletion</h2>
+        <p>You can disconnect any seller account at any time from the SellerPipe dashboard, which revokes the SP-API refresh token immediately. To request deletion of all data SellerPipe has stored on your behalf — account, billing records, audit logs, and any cached Amazon Information — email <a href="mailto:support@sellerpipe.xyz">support@sellerpipe.xyz</a>. We process deletion requests within 30 days and confirm completion in writing.</p>
+        <p>Data that has already been loaded into your destination warehouse (e.g., your BigQuery project) is under your control; SellerPipe cannot delete it on your behalf and you are responsible for managing it directly.</p>
+
+        <h2>6. Your rights</h2>
+        <p>You have the right to access, correct, export, and delete the personal information SellerPipe holds about you. To exercise any of these rights, email <a href="mailto:support@sellerpipe.xyz">support@sellerpipe.xyz</a>. We respond to verified requests within 30 days.</p>
+        <p>If you are located in the European Economic Area, the United Kingdom, or California, you have additional rights under the GDPR, UK GDPR, and CCPA respectively, including the right to lodge a complaint with your local supervisory authority.</p>
+
+        <h2>7. Security</h2>
+        <p>We protect information using industry-standard administrative, technical, and physical safeguards: encryption in transit (TLS 1.2+) and at rest (AES-256 via KMS), strict access controls with multi-factor authentication for all administrative access, audit logging, network segmentation, regular dependency patching, and incident-response procedures.</p>
+        <p>If we become aware of a security incident affecting your Amazon Information or other sensitive data, we will notify affected customers without undue delay and, in any event, within 72 hours of confirming the incident, in accordance with the Amazon Data Protection Policy and applicable law.</p>
+
+        <h2>8. International data transfers</h2>
+        <p>SellerPipe operates primarily in the United States. If you access the Service from outside the US, your information will be transferred to, processed, and stored in the US. Where required, we rely on appropriate transfer mechanisms such as Standard Contractual Clauses.</p>
+
+        <h2>9. Children</h2>
+        <p>The Service is not intended for individuals under 18 years of age, and we do not knowingly collect information from anyone under 18.</p>
+
+        <h2>10. Changes to this Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date above and, where appropriate, notify you by email or through the Service. Continued use of the Service after the effective date constitutes acceptance of the updated Policy.</p>
+
+        <h2>11. Contact</h2>
+        <p>Questions, requests, or complaints about this Privacy Policy or our handling of your information:</p>
+        <p><strong>Wyrmspire LLC</strong><br />
+        Email: <a href="mailto:support@sellerpipe.xyz">support@sellerpipe.xyz</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <a href="/" class="brand">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="38" height="38" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+      <div class="foot-links">
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/legal/">Legal</a>
+      </div>
+      <div class="legal">© 2026 Wyrmspire LLC. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

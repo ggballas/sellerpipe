@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Beta — SellerPipe</title>
+  <meta name="description" content="SellerPipe is currently in private beta. Contact us at support@sellerpipe.xyz for access." />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="220x220" href="../assets/logo-220.png" />
+  <link rel="apple-touch-icon" href="../assets/logo-220.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b1220; --panel: #131d33; --border: #243049;
+      --text: #e8edf7; --muted: #9aa7c2; --brand: #5b8cff; --brand-2: #43d9b8;
+      --radius: 16px; --maxw: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2647 0%, transparent 60%), var(--bg);
+      color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(11, 18, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; flex-direction: row; align-items: center; gap: 12px; line-height: 1.05; text-decoration: none; }
+    .brand-mark { display: block; border-radius: 10px; flex: 0 0 auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand .name {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand .by { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 0; }
+    .beta-card {
+      max-width: 600px; margin: 0 auto;
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 24px; padding: 56px 44px; text-align: center;
+    }
+    .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 600; color: var(--brand-2);
+      background: rgba(67, 217, 184, 0.1); border: 1px solid rgba(67, 217, 184, 0.25);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 38px); line-height: 1.15; letter-spacing: -0.02em;
+      margin: 0 0 16px; font-weight: 800;
+    }
+    h1 .grad {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    p.lead { font-size: 17px; color: var(--muted); margin: 0 0 32px; }
+    .email-display {
+      display: inline-block; font-size: clamp(20px, 2.5vw, 26px); font-weight: 700;
+      letter-spacing: -0.01em; margin: 0 0 8px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      word-break: break-all; text-decoration: none;
+    }
+    .response-time { display: block; font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .btn {
+      display: inline-block; padding: 13px 26px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      border: 1px solid transparent; text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #06122a; box-shadow: 0 8px 24px rgba(91, 140, 255, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35); text-decoration: none; }
+    .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); margin-left: 8px; }
+    .btn-ghost:hover { border-color: var(--brand); text-decoration: none; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    .divider { border: 0; border-top: 1px solid var(--border); margin: 36px 0 28px; }
+    .what-next { text-align: left; color: var(--muted); font-size: 14px; }
+    .what-next strong { color: var(--text); display: block; margin-bottom: 8px; font-size: 15px; }
+    .what-next ol { padding-left: 22px; margin: 0; }
+    .what-next li { margin-bottom: 6px; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot .legal { color: var(--muted); font-size: 13px; }
+    .foot .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .foot .foot-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .foot .foot-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="SellerPipe by Wyrmspire">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="44" height="44" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="beta-card">
+        <span class="eyebrow">Private Beta</span>
+        <h1>Thanks for your interest in <span class="grad">SellerPipe</span></h1>
+        <p class="lead">
+          We're currently in <strong>private beta</strong> and onboarding new accounts one
+          at a time. Drop us a line and we'll get back to you with next steps.
+        </p>
+
+        <a href="mailto:support@sellerpipe.xyz?subject=SellerPipe%20Beta%20Access%20Request" class="email-display">support@sellerpipe.xyz</a>
+        <span class="response-time">We usually respond within 24 business hours.</span>
+
+        <div class="cta-row">
+          <a href="mailto:support@sellerpipe.xyz?subject=SellerPipe%20Beta%20Access%20Request" class="btn btn-primary">Email us for access</a>
+          <a href="/" class="btn btn-ghost">Back to home</a>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="what-next">
+          <strong>What to include in your email</strong>
+          <ol>
+            <li>How many Amazon seller accounts you'd like to connect</li>
+            <li>Your destination warehouse (BigQuery project ID, if known)</li>
+            <li>Roughly when you'd like to start syncing data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="legal">© 2026 Wyrmspire LLC. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/legal/">Legal</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

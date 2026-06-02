@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — SellerPipe</title>
+  <meta name="description" content="Create your SellerPipe account and start piping Amazon SP-API data into BigQuery." />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="220x220" href="../assets/logo-220.png" />
+  <link rel="apple-touch-icon" href="../assets/logo-220.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b1220; --panel: #131d33; --border: #243049;
+      --text: #e8edf7; --muted: #9aa7c2; --brand: #5b8cff; --brand-2: #43d9b8;
+      --radius: 16px; --maxw: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2647 0%, transparent 60%), var(--bg);
+      color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(11, 18, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; flex-direction: row; align-items: center; gap: 12px; line-height: 1.05; text-decoration: none; }
+    .brand-mark { display: block; border-radius: 10px; flex: 0 0 auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand .name {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand .by { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .nav-aside { color: var(--muted); font-size: 14px; }
+    .nav-aside a { color: var(--text); font-weight: 600; }
+
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 0; }
+
+    .auth-card {
+      width: 100%; max-width: 440px; margin: 0 auto;
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 36px;
+    }
+    .auth-head { text-align: center; margin-bottom: 28px; }
+    .auth-head h1 {
+      font-size: 26px; line-height: 1.2; letter-spacing: -0.02em;
+      margin: 0 0 8px; font-weight: 800;
+    }
+    .auth-head p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    form { display: grid; gap: 16px; }
+    .field { display: grid; gap: 6px; }
+    .field label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .field input {
+      width: 100%; padding: 12px 14px;
+      background: rgba(11, 18, 32, 0.6); color: var(--text);
+      border: 1px solid var(--border); border-radius: 10px;
+      font-family: inherit; font-size: 15px;
+      transition: border-color .15s, background .15s;
+    }
+    .field input:focus {
+      outline: none; border-color: var(--brand);
+      background: rgba(11, 18, 32, 0.9);
+    }
+    .field-hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    .btn {
+      display: inline-block; padding: 13px 26px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      border: 1px solid transparent; text-decoration: none;
+      font-family: inherit; width: 100%; text-align: center;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #06122a; box-shadow: 0 8px 24px rgba(91, 140, 255, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35); }
+
+    .legal-note { font-size: 12px; color: var(--muted); text-align: center; line-height: 1.55; margin: 16px 0 0; }
+    .alt-cta { text-align: center; color: var(--muted); font-size: 14px; margin: 20px 0 0; padding-top: 20px; border-top: 1px solid var(--border); }
+    .alt-cta a { color: var(--text); font-weight: 600; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot .legal { color: var(--muted); font-size: 13px; }
+    .foot .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .foot .foot-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .foot .foot-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="SellerPipe by Wyrmspire">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="44" height="44" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+      <div class="nav-aside">
+        Already have an account? <a href="/login/">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="auth-card">
+        <div class="auth-head">
+          <h1>Create your account</h1>
+          <p>Start piping Amazon data into BigQuery.</p>
+        </div>
+
+        <form id="signup-form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization" required />
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required />
+            <span class="field-hint">At least 8 characters.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Create account</button>
+
+          <p class="legal-note">
+            By signing up you agree to our <a href="/legal/">Terms of Service</a>
+            and <a href="/privacy/">Privacy Policy</a>.
+          </p>
+        </form>
+
+        <div class="alt-cta">
+          Already have an account? <a href="/login/">Log in</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="legal">© 2026 Wyrmspire LLC. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/legal/">Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // SellerPipe is in private beta. Form submissions don't post anywhere:
+    // we intercept, discard values, and route to the beta-waitlist page.
+    document.getElementById('signup-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = '/beta/';
+    });
+  </script>
+</body>
+</html>
