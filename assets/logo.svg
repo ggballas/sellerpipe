@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none">
+  <defs>
+    <linearGradient id="brand" x1="60" y1="60" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b8cff"/>
+      <stop offset="1" stop-color="#43d9b8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.32" cy="0.24" r="0.85">
+      <stop offset="0" stop-color="#1d2c52"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background tile -->
+  <rect x="0" y="0" width="300" height="300" rx="66" fill="url(#glow)"/>
+  <rect x="1.5" y="1.5" width="297" height="297" rx="64.5" fill="none" stroke="#2a3a5e" stroke-width="3"/>
+
+  <!-- data-pipe: an S-shaped flow, the "S" of SellerPipe and a pipeline -->
+  <path d="M 206 104
+           C 206 78 168 70 142 82
+           C 112 96 112 132 146 146
+           C 180 160 180 196 154 210
+           C 128 224 92 216 86 192"
+        fill="none" stroke="url(#brand)" stroke-width="34"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- inner highlight to give the pipe volume -->
+  <path d="M 206 104
+           C 206 78 168 70 142 82
+           C 112 96 112 132 146 146
+           C 180 160 180 196 154 210
+           C 128 224 92 216 86 192"
+        fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="10"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- flowing data nodes feeding into the pipe -->
+  <circle cx="232" cy="118" r="11" fill="#43d9b8"/>
+  <circle cx="252" cy="100" r="7"  fill="#43d9b8" fill-opacity="0.6"/>
+  <circle cx="266" cy="86"  r="4.5" fill="#43d9b8" fill-opacity="0.35"/>
+</svg>
