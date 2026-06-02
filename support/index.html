@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — SellerPipe</title>
+  <meta name="description" content="Get help with SellerPipe: SP-API connection setup, BigQuery destinations, sync troubleshooting, billing, and account questions. Reach us at support@sellerpipe.xyz." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="220x220" href="../assets/logo-220.png" />
+  <link rel="apple-touch-icon" href="../assets/logo-220.png" />
+
+  <meta property="og:title" content="Support — SellerPipe" />
+  <meta property="og:description" content="Get help with SellerPipe. Email support@sellerpipe.xyz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sellerpipe.xyz/support/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --panel: #131d33;
+      --border: #243049;
+      --text: #e8edf7;
+      --muted: #9aa7c2;
+      --brand: #5b8cff;
+      --brand-2: #43d9b8;
+      --accent: #ffb454;
+      --radius: 16px;
+      --maxw: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2647 0%, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 18, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; flex-direction: row; align-items: center; gap: 12px; line-height: 1.05; }
+    .brand-mark { display: block; border-radius: 10px; flex: 0 0 auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand .name {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand .by { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.btn-primary { color: #06122a; }
+    .nav-links a.btn-primary:hover { color: #06122a; }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease, background .15s;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #06122a; box-shadow: 0 8px 24px rgba(91, 140, 255, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(91, 140, 255, 0.35); }
+    .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--brand); }
+
+    /* Hero */
+    .support-hero { padding: 80px 0 40px; }
+    .support-hero .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 600; color: var(--brand-2);
+      background: rgba(67, 217, 184, 0.1); border: 1px solid rgba(67, 217, 184, 0.25);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
+    }
+    .support-hero h1 {
+      font-size: clamp(36px, 6vw, 56px); line-height: 1.05; letter-spacing: -0.03em;
+      margin: 0 0 20px; font-weight: 800;
+    }
+    .support-hero h1 .grad {
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .support-hero p.lead { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 720px; margin: 0; }
+
+    /* Contact cards */
+    section { padding: 40px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+    @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 32px;
+    }
+    .card h2 { margin: 0 0 14px; font-size: 22px; letter-spacing: -0.01em; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+    .card ul { padding-left: 20px; margin: 0; color: var(--muted); font-size: 15px; }
+    .card ul li { margin-bottom: 6px; }
+
+    .email-display {
+      display: block; font-size: clamp(20px, 2.5vw, 26px); font-weight: 700;
+      letter-spacing: -0.01em; margin: 8px 0 14px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      word-break: break-all;
+    }
+    .response-time {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--brand-2); background: rgba(67, 217, 184, 0.1);
+      border: 1px solid rgba(67, 217, 184, 0.25);
+      padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;
+    }
+
+    /* FAQ */
+    .faq-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+    .faq-head h2 { font-size: clamp(28px, 4vw, 36px); letter-spacing: -0.02em; margin: 0 0 12px; }
+    .faq-head p { color: var(--muted); font-size: 17px; margin: 0; }
+
+    .faq { display: grid; gap: 14px; max-width: 820px; margin: 0 auto; }
+    details.faq-item {
+      background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 22px;
+    }
+    details.faq-item[open] { border-color: var(--brand); }
+    details.faq-item summary {
+      cursor: pointer; font-weight: 600; font-size: 16px;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+'; font-size: 22px; color: var(--brand); transition: transform .15s;
+    }
+    details.faq-item[open] summary::after { content: '−'; }
+    details.faq-item p { color: var(--muted); font-size: 15px; margin: 12px 0 0; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 48px 0; margin-top: 40px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot .brand .name { font-size: 18px; }
+    .foot .legal { color: var(--muted); font-size: 14px; }
+    .foot .foot-links { display: flex; gap: 22px; }
+    .foot .foot-links a { color: var(--muted); font-size: 14px; }
+    .foot .foot-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="SellerPipe by Wyrmspire">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="44" height="44" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/" class="active">Support</a>
+        <a href="/#contact" class="btn btn-primary">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="support-hero">
+      <div class="wrap">
+        <span class="eyebrow">We're here to help</span>
+        <h1><span class="grad">Support</span></h1>
+        <p class="lead">
+          Whether you're hooking up your first Amazon seller account, debugging a sync, or
+          asking about billing — we read every message and reply fast.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="card">
+            <h2>Email support</h2>
+            <p>The fastest way to reach us. Include your seller account name (or BigQuery project ID) and a description of what you're seeing.</p>
+            <a href="mailto:support@sellerpipe.xyz?subject=SellerPipe%20Support" class="email-display">support@sellerpipe.xyz</a>
+            <span class="response-time">Typical response: within 24 business hours</span>
+            <div>
+              <a href="mailto:support@sellerpipe.xyz?subject=SellerPipe%20Support" class="btn btn-primary">Email support</a>
+            </div>
+          </div>
+          <div class="card">
+            <h2>What we cover</h2>
+            <ul>
+              <li>Connecting Amazon Seller Central via SP-API</li>
+              <li>BigQuery destination setup and access</li>
+              <li>Sync schedules, status, and troubleshooting</li>
+              <li>Report and table schema questions</li>
+              <li>API access and authentication</li>
+              <li>Billing and account changes</li>
+              <li>Data deletion and account closure requests</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="faq-head">
+          <h2>Common questions</h2>
+          <p>Quick answers to the things we hear most. If yours isn't here, just email us.</p>
+        </div>
+        <div class="faq">
+          <details class="faq-item">
+            <summary>How do I connect my Amazon seller account?</summary>
+            <p>From your SellerPipe dashboard, click "Add seller account" and you'll be redirected to Seller Central to authorize SellerPipe via Amazon's SP-API. Once you approve, we exchange a one-time code for a refresh token, store it encrypted, and start the first sync within a few minutes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What data does SellerPipe sync?</summary>
+            <p>Standard SP-API reports: orders, sales, FBA inventory, settlements, financial events, listings, returns, and (for Brand-Registry-enrolled sellers) Brand Analytics datasets. We can also enable Amazon Advertising data — Sponsored Products, Sponsored Brands, Sponsored Display, and Attribution.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where does my data live?</summary>
+            <p>In your own BigQuery project. SellerPipe writes directly to the dataset you specify; we don't operate a separate warehouse for your data. You keep full ownership and can revoke our access at any time.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I disconnect or delete my data?</summary>
+            <p>From the dashboard, click "Disconnect account" on the seller you want to remove — this revokes the SP-API refresh token immediately. To delete the data SellerPipe has already loaded, email us at <a href="mailto:support@sellerpipe.xyz">support@sellerpipe.xyz</a> with your account details and we'll process it within 7 days.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which marketplaces do you support?</summary>
+            <p>US, UK, DE, FR, IT, ES, JP, CA, IN, and MX. If your seller account spans multiple of these marketplaces, SellerPipe will pull data from all of them under one connection.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my data shared with anyone?</summary>
+            <p>No. We never resell seller data and we never share it with third parties you haven't explicitly authorized. If you grant access to another app via SellerPipe's app-delegation feature, that app's access is scoped, logged, and revocable from your dashboard.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <a href="/" class="brand">
+        <img class="brand-mark" src="../assets/logo.svg" alt="SellerPipe logo" width="38" height="38" />
+        <span class="brand-text">
+          <span class="name">SellerPipe</span>
+          <span class="by">By Wyrmspire</span>
+        </span>
+      </a>
+      <div class="foot-links">
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+      </div>
+      <div class="legal">© 2026 Wyrmspire LLC. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
